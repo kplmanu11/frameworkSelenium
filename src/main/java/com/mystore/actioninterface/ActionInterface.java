@@ -86,7 +86,7 @@ public interface ActionInterface {
 
 	public void fluentWait(WebDriver driver, WebElement element, int timeOut);
 
-	public void implicitWait(WebDriver driver, int timeOut);
+	public void implicitWait(WebDriver driver);
 
 	public void explicitWait(WebDriver driver, WebElement element, int timeOut);
 

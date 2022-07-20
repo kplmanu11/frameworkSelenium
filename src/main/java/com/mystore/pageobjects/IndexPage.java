@@ -38,7 +38,7 @@ public class IndexPage extends BaseClass {
 		myStoreLogo.isDisplayed();
 	}
 	
-	public void getTitle() {
+	public void getMyStoreTitle() {
 		driver.getTitle();
 	}
 	
