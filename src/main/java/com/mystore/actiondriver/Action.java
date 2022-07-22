@@ -36,7 +36,7 @@ import com.mystore.base.BaseClass;
  *
  */
 public class Action extends BaseClass implements ActionInterface {
-
+	
 	public void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
 		// TODO Auto-generated method stub
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -44,6 +44,7 @@ public class Action extends BaseClass implements ActionInterface {
 
 	}
 
+	
 	public void click(WebDriver ldriver, WebElement ele) {
 		// TODO Auto-generated method stub
 		Actions act = new Actions(driver);

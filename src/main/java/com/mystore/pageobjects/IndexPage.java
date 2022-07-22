@@ -4,9 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.mystore.actiondriver.Action;
 import com.mystore.base.BaseClass;
 
 public class IndexPage extends BaseClass {
+	Action action = new Action();
 
 	// signin button
 	@FindBy(xpath = "//a[@class='login']")
@@ -30,20 +32,29 @@ public class IndexPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickOnSignIn() {
-		signInBtn.click();
+	public LoginPage clickOnSignIn() {
+		// signInBtn.click();
+		action.click(driver, signInBtn);
+		return new LoginPage();
+
 	}
-	
+
 	public void validateLogo() {
-		myStoreLogo.isDisplayed();
+		// myStoreLogo.isDisplayed();
+		action.isDisplayed(driver, myStoreLogo);
 	}
-	
-	public void getMyStoreTitle() {
-		driver.getTitle();
+
+	public String getMyStoreTitle() {
+		// driver.getTitle();
+		String myStoreTitle = action.getTitle(driver);
+		return myStoreTitle;
 	}
-	
-	public void searchProduct() {
-		searchProduct.sendKeys("Test");
+
+	public SearchResultPage searchProduct(String productName) {
+		// searchProduct.sendKeys("Test");
+		action.type(searchProduct, productName);
+		action.click(driver, submitSearchButton);
+		return new SearchResultPage();
 	}
 
 }
